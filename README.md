@@ -1,4 +1,8 @@
 # Getting Started with Create React App
+Hello and welcome to the Ram and Bytes Database for https://github.com/DiegoLA3/ramandbytes482 please use this and the other page to make sure everything runs smoothly
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
