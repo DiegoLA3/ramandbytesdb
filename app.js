@@ -78,6 +78,35 @@ app.post("/login", async (req, res) => {
 
 });
 
+require ("./financialData")
+const UserFinancial = mongoose.model("FinancialData")
+
+app.post("/calculate" , async(req, res) => {
+    const {lamount, lterm, irate, bcost, balance, apr, lpayment, damount, apy, lAmount, APR, IRate, lTerm, bCost} = req.body;
+    
+    try {
+    await UserFinancial.create({
+        lamount,
+        lterm, 
+        irate, 
+        bcost, 
+        balance, 
+        apr, 
+        lpayment, 
+        damount, 
+        apy, 
+        lAmount, 
+        APR, 
+        IRate,
+        lTerm,
+        bCost,
+    });
+    res.send({status: "Successful"});
+    }catch (error) {
+        res.send({status: "Unsuccessful"});
+    }
+})
+
 app.post("/userData",async(req,res) => {
     const {token} = req.body;
     try {
