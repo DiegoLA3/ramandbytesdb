@@ -27,6 +27,9 @@ require("./userSchema")
 
 const User=mongoose.model("UserInfo")
 
+// require ("./financialData")
+// const UserFinancial = mongoose.model("FinancialData")
+
 app.post("/register" , async(req, res) => {
     const {fname,lname,email,uname, password} = req.body;
 
@@ -78,14 +81,14 @@ app.post("/login", async (req, res) => {
 
 });
 
-require ("./financialData")
-const UserFinancial = mongoose.model("FinancialData")
+
+
 
 app.post("/calculate" , async(req, res) => {
     const {lamount, lterm, irate, bcost, balance, apr, lpayment, damount, apy, lAmount, APR, IRate, lTerm, bCost} = req.body;
     
     
-    await UserFinancial.create({
+    await User.create({
         lamount,
         lterm, 
         irate, 
